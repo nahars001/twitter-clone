@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import SidebarOption from "./SidebarOption";
 import HomeIcon from "@mui/icons-material/Home";
-import SearchIcon from "@mui/icons-material/Search";
+import TagIcon from '@mui/icons-material/Tag';
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
@@ -16,13 +16,13 @@ import { Button } from "@mui/material";
 const  Sidebar =()=>  {
 
     return (
-        <div className="'sidebar">
+        <div className="sidebar">
             {/* twiter icon */}
-            <p> <TwitterIcon /></p>
+             <TwitterIcon  className="sidebar__twitterIcon"/>
 
 
             <SidebarOption active Icon={HomeIcon} text="Home" />
-            <SidebarOption Icon={SearchIcon} text="Explore" />
+            <SidebarOption Icon={TagIcon} text="Explore" />
             <SidebarOption Icon={NotificationsNoneIcon} text="Notifcations" />
             <SidebarOption Icon={MailOutlineIcon} text="Messages" />
             <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />

@@ -1,11 +1,16 @@
-
+import React from 'react';
+import './Feed.css';
+import TweetBox from './TweetBox';
 const Feed = () => {
- 
-    return(
-        <div>
+
+    return (
+        <div className='feed'>
             {/* header */}
-            <h2> Home</h2>
+            <div className="feed__header">
+               
+            </div>
             {/* tweet Box */}
+            <TweetBox/> 
             {/* Post */}
             {/* Post */}
             {/* Post */}
