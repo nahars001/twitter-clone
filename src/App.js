@@ -1,15 +1,18 @@
+
+import Feed from './components/Feed';
 import './App.css';
 import Sidebar from './components/Sidebar';
 
-function App() {
+const   App =() => {
   return (
     <div className="App">
       {/* side bar */}
-      <Sidebar/> 
+      <Sidebar />
 
       {/* feed */}
+      <Feed/>
       {/* widgets */}
-     
+
     </div>
   );
 }
