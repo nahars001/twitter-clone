@@ -36,8 +36,8 @@ const Post = forwardRef(
                     <Interweave content={message} > </Interweave>
                 </div>
             </div>
-            <img src={imageSource} alt="gif">
-            </img>
+           { imageSource.trim().length !== 0 && <img src={imageSource} alt="gif"
+            />}
             <div className="post__footer">
 
                 <BarChartOutlined fontSize="small" />
