@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Made with React JS, html , css
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ [Hosted project url](https://twitter-clone-nahars001.netlify.app/).
 

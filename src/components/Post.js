@@ -2,10 +2,12 @@
 import { BarChartOutlined, ChatBubbleOutline, FavoriteBorder, FileUploadOutlined, Repeat, Verified } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import './Post.css';
+import { forwardRef } from 'react';
+import { Interweave } from "interweave";
+ 
 
-
-
-const Post = (props) => {
+const Post = forwardRef(
+    (props , ref) => {
 
     const displayName = props.tweet.displayName;
     const username = props.tweet.username;
@@ -16,7 +18,7 @@ const Post = (props) => {
     const imageSource = props.tweet.image;
 
 
-    return <div className="post">
+    return <div className="post" ref={ref}>
         <div className="post__avatar">
             <Avatar src={avatar} />
         </div>
@@ -31,7 +33,7 @@ const Post = (props) => {
                     </h3>
                 </div>
                 <div className="post__headerdescription">
-                    <p>{message}</p>
+                    <Interweave content={message} > </Interweave>
                 </div>
             </div>
             <img src={imageSource} alt="gif">
@@ -47,7 +49,7 @@ const Post = (props) => {
             </div>
         </div>
     </div>
-}
+});
 
 
 export default Post;

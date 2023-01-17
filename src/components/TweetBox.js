@@ -42,7 +42,7 @@ const TweetBox = () => {
                 <input
                     className='tweetBox__inputImage'
                     placeholder="Enter image URL (Optional)."
-                    type='text'
+                    type='textarea'
                     value={tweetImage}
                     onChange={imageChangeHandler}
                 />
