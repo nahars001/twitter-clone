@@ -1,4 +1,9 @@
-import firebase from 'firebase';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+
+
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyBABNxOJ2BFios3kRsKSrnw_zCGuU9Q6WE",
     authDomain: "twitter-clone-nahar.firebaseapp.com",
@@ -10,7 +15,7 @@ const firebaseConfig = {
 };
 
 
-const firebaseApp = firebase.initalizeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const db = firebaseApp.firestore();
 export default db;
