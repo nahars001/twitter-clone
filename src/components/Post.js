@@ -26,7 +26,7 @@ const Post = () => {
                     <h3>
                         Nahar Singh  {"  "}
                         <span className="post__headerSpecial">
-                            <Verified className="verifiedIcon" /> @nahar
+                            <Verified className="verifiedIcon" /> @naharSingh
                         </span>
                     </h3>
                 </div>
