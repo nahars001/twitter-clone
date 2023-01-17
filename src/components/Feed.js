@@ -40,6 +40,7 @@ const Feed = () => {
                 <Post tweet={post} />
             ))}
 
+            <Post tweet={tweet}/>
 
 
 
