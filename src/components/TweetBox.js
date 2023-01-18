@@ -6,7 +6,7 @@ const TweetBox = () => {
 
     const[tweetMessage , setTweetMessage] = useState("");
     const [tweetImage, setTweetImage] = useState("");
-    const [tweetDisabled, setTweetDisabled] = useState(true);
+    const [tweetDisabled, setTweetDisabled] = useState(false);
     
     const onChangeHandler = (event) => {
         setTweetMessage(event.target.value);
@@ -31,6 +31,9 @@ const TweetBox = () => {
  const  submitHandler = event => {
         event.preventDefault();
        
+        if(tweetDisabled){
+            return;
+        }
         db.collection('posts').add({
             displayName: "Nahar Singh",
             username: "naharSingh",
@@ -43,7 +46,7 @@ const TweetBox = () => {
 
         })
         setTweetMessage("");
-     setTweetDisabled(true);
+       setTweetDisabled(true);
         setTweetImage("");
         
     }
