@@ -20,42 +20,19 @@ const Sidebar = () => {
         <div className="sidebar">
             {/* twiter icon */}
             <TwitterIcon className="sidebar__twitterIcon" />
-
-            <Link to="home">
-                <SidebarOption active Icon={HomeIcon} text="Home" />
-            </Link>
-            <Link to="explore">
-                <SidebarOption Icon={TagIcon} text="Explore" />
-            </Link>
-            <Link to="notifications">
-                <SidebarOption Icon={NotificationsNoneIcon} text="Notifcations" />
-            </Link>
-            <Link to="messages">
-                <SidebarOption Icon={MailOutlineIcon} text="Messages" />
-            </Link>
-            <Link to="bookmarks">
-                <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
-            </Link>
-            <Link to="lists">
-                <SidebarOption Icon={ListAltIcon} text="Lists" />
-
-            </Link>
-            <Link to="profile">
-                <SidebarOption Icon={PermIdentityIcon} text="Profile" />
-            </Link>
-
-
-
+            <SidebarOption active Icon={HomeIcon} text="Home" />
+            <SidebarOption Icon={TagIcon} text="Explore" />
+            <SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
+            <SidebarOption Icon={MailOutlineIcon} text="Messages" />
+            <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
+            <SidebarOption Icon={ListAltIcon} text="Lists" />
+            <SidebarOption Icon={PermIdentityIcon} text="Profile" />
             <SidebarOption Icon={MoreHorizIcon} text="More" />
-
-            <Link to="home">
-            <Button variant="outlined" className="sidebar__tweet" fullWidth>Tweet </Button>
-
+            <Link className="link" to="home">
+                <Button variant="outlined" className="sidebar__tweet" fullWidth>Tweet </Button>
             </Link>
-
             {/* side bar options */}
             {/* tweet button */}
-
         </div>
 
 
