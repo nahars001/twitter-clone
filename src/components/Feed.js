@@ -17,6 +17,15 @@ const Feed = () => {
   
 
 
+
+    var sortedposts = posts.slice(0);
+    sortedposts.sort(function (a, b) {
+        var x = b.timeStamp;
+        var y = a.timeStamp;
+        return x < y ? -1 : x > y ? 1 : 0;
+    });
+
+
     // const tweet =
     // {
     //     displayName: "Nahar Singh",
@@ -39,8 +48,8 @@ const Feed = () => {
             <TweetBox />
             {/* Post */}
             <FlipMove>
-            {posts.map(post => (
-                <Post  key={post.text}
+                {sortedposts.map(post => (
+                <Post  key={post.timeStamp}
                 tweet={post} />
             ))}
 

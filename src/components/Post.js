@@ -4,7 +4,7 @@ import { Avatar } from "@mui/material";
 import './Post.css';
 import { forwardRef } from 'react';
 import { Interweave } from "interweave";
- 
+
 
 const Post = forwardRef(
     (props , ref) => {
@@ -12,13 +12,30 @@ const Post = forwardRef(
     const displayName = props.tweet.displayName;
     const username = props.tweet.username;
     const verified = props.tweet.verified;
-    const timeStamp = props.tweet.timeStamp;
+  
     const message = props.tweet.message;
     const avatar = props.tweet.avatar;
     const imageSource = props.tweet.image;
-
-
-    return <div className="post" ref={ref}>
+    let displayTime = "";
+    const currentDate = new Date().valueOf();
+     let  timeStamp =(new Date(currentDate).getTime() - new Date(props.tweet.timeStamp).getTime()) /1000;
+        timeStamp = Math.abs(Math.round(timeStamp));
+if(timeStamp < 60){
+    displayTime = timeStamp + "s";
+}else if(timeStamp < 3600){
+    displayTime = Math.floor(timeStamp /60)+ "m";
+}else if (timeStamp < 86400){
+    displayTime = Math.floor(timeStamp /3600) + "h";
+}else{
+    let monthIndex = new Date(props.tweet.timeStamp).getMonth();
+    const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let date = new Date(props.tweet.timeStamp).getDate();
+    displayTime = month[monthIndex] + " " + date;
+} 
+       
+    return (
+    
+    <div className="post" ref={ref}>
         <div className="post__avatar">
             <Avatar src={avatar} />
         </div>
@@ -29,7 +46,7 @@ const Post = forwardRef(
                         {displayName}  {"  "}
                         <span className="post__headerSpecial">
                             {verified && <Verified className="verifiedIcon" />} @{username}
-                            {" . "} {timeStamp}h</span>
+                                {" . "} {displayTime}</span>
                     </h3>
                 </div>
                 <div className="post__headerdescription">
@@ -49,7 +66,8 @@ const Post = forwardRef(
             </div>
         </div>
     </div>
-});
+ 
+)});
 
 
 export default Post;
