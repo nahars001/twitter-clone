@@ -1,8 +1,8 @@
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import React, { useEffect, useState } from "react";
 import { TwitterTweetEmbed } from 'react-twitter-embed';
-import db from '../firebase';
-import Post from './Post';
+import db from '../../firebase';
+import Post from '../feed/Post';
 import './Widgets.css';
 
 const Widgets = () => {

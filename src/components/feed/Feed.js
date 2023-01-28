@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Feed.css';
-import TweetBox from './TweetBox';
+import TweetBox from '../tweetbox/TweetBox';
 import Post from './Post';
-import db from '../firebase';
+import db from '../../firebase';
 import FlipMove from 'react-flip-move';
 
 const Feed = () => {
@@ -14,7 +14,7 @@ const Feed = () => {
         console.log(db);
 
     }, []);
-  
+
 
 
 
@@ -49,9 +49,9 @@ const Feed = () => {
             {/* Post */}
             <FlipMove>
                 {sortedposts.map(post => (
-                <Post  key={post.timeStamp}
-                tweet={post} />
-            ))}
+                    <Post key={post.timeStamp}
+                        tweet={post} />
+                ))}
 
             </FlipMove>
 
